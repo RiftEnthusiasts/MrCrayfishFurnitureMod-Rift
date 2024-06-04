@@ -20,7 +20,7 @@ public abstract class BlockFurnitureWaterlogged extends BlockFurniture implement
 {
     public static final BooleanProperty WATERLOGGED = BlockStateProperties.WATERLOGGED;
 
-    public BlockFurnitureWaterlogged(Builder builder)
+    public BlockFurnitureWaterlogged(Properties builder)
     {
         super(builder);
     }
@@ -29,13 +29,13 @@ public abstract class BlockFurnitureWaterlogged extends BlockFurniture implement
     public IBlockState getStateForPlacement(BlockItemUseContext context)
     {
         IFluidState fluidState = context.getWorld().getFluidState(context.getPos());
-        return this.getDefaultState().withProperty(HORIZONTAL_FACING, context.getPlacementHorizontalFacing()).withProperty(WATERLOGGED, fluidState.getFluid() == Fluids.WATER);
+        return this.getDefaultState().with(HORIZONTAL_FACING, context.getPlacementHorizontalFacing()).with(WATERLOGGED, fluidState.getFluid() == Fluids.WATER);
     }
 
     @Override
     public IFluidState getFluidState(IBlockState state)
     {
-        return state.getValue(WATERLOGGED) ? Fluids.WATER.getStillFluidState(false) : super.getFluidState(state);
+        return state.get(WATERLOGGED) ? Fluids.WATER.getStillFluidState(false) : super.getFluidState(state);
     }
 
     @Override

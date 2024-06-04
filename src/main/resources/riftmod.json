@@ -5,7 +5,10 @@
         "MrCrayfish"
     ],
     "listeners": [
-        "com.mrcrayfish.furniture.rift.mixin.MixinListener",
+        {
+            "class": "com.mrcrayfish.furniture.rift.mixin.MixinListener",
+            "priority": -5
+        },
         "com.mrcrayfish.furniture.rift.init.ModBlocks",
         "com.mrcrayfish.furniture.rift.init.ModEntities",
         "com.mrcrayfish.furniture.rift.init.ModEntityRenders"

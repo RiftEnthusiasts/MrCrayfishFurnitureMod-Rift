@@ -14,8 +14,7 @@ import net.minecraft.util.EnumFacing;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.shapes.VoxelShape;
 import net.minecraft.world.IBlockReader;
-
-import javax.annotation.Nullable;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * Author: MrCrayfish
@@ -28,8 +27,8 @@ public class BlockModernTV extends BlockFurnitureWaterlogged
 
     public BlockModernTV()
     {
-        super(Block.Builder.create(Material.IRON, EnumDyeColor.GRAY));
-        this.setDefaultState(this.getStateContainer().getBaseState().withProperty(HORIZONTAL_FACING, EnumFacing.NORTH).withProperty(MOUNTED, false));
+        super(Block.Properties.create(Material.IRON, EnumDyeColor.GRAY));
+        this.setDefaultState(this.getStateContainer().getBaseState().with(HORIZONTAL_FACING, EnumFacing.NORTH).with(MOUNTED, false));
         SHAPES = this.generateShapes(this.getStateContainer().getValidStates());
     }
 
@@ -41,8 +40,8 @@ public class BlockModernTV extends BlockFurnitureWaterlogged
         ImmutableMap.Builder<IBlockState, VoxelShape> builder = new ImmutableMap.Builder<>();
         for(IBlockState state : states)
         {
-            EnumFacing facing = state.getValue(HORIZONTAL_FACING);
-            boolean mounted = state.getValue(MOUNTED);
+            EnumFacing facing = state.get(HORIZONTAL_FACING);
+            boolean mounted = state.get(MOUNTED);
             VoxelShape shape = mounted ? MOUNTED_SHAPE[facing.getHorizontalIndex()] : NORMAL_SHAPE[facing.getHorizontalIndex()];
             builder.put(state, shape);
         }
@@ -68,7 +67,7 @@ public class BlockModernTV extends BlockFurnitureWaterlogged
         IBlockState state = super.getStateForPlacement(context);
         if(context.getFace().getHorizontalIndex() != -1)
         {
-            state = state.withProperty(MOUNTED, true);
+            state = state.with(MOUNTED, true);
         }
         return state;
     }

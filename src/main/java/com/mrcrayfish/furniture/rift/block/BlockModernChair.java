@@ -25,8 +25,8 @@ public class BlockModernChair extends BlockFurnitureWaterlogged
 
     public BlockModernChair()
     {
-        super(Block.Builder.create(Material.WOOD, EnumDyeColor.WHITE).hardnessAndResistance(1.0F, 1.0F));
-        this.setDefaultState(this.getStateContainer().getBaseState().withProperty(HORIZONTAL_FACING, EnumFacing.NORTH).withProperty(WATERLOGGED, false));
+        super(Block.Properties.create(Material.WOOD, EnumDyeColor.WHITE).hardnessAndResistance(1.0F, 1.0F));
+        this.setDefaultState(this.getStateContainer().getBaseState().with(HORIZONTAL_FACING, EnumFacing.NORTH).with(WATERLOGGED, false));
         SHAPES = this.generateShapes(this.getStateContainer().getValidStates());
     }
 
@@ -43,7 +43,7 @@ public class BlockModernChair extends BlockFurnitureWaterlogged
         ImmutableMap.Builder<IBlockState, VoxelShape> builder = new ImmutableMap.Builder<>();
         for(IBlockState state : states)
         {
-            EnumFacing facing = state.getValue(HORIZONTAL_FACING);
+            EnumFacing facing = state.get(HORIZONTAL_FACING);
 
             List<VoxelShape> shapes = new ArrayList<>();
             shapes.add(CHAIR_SEAT[facing.getHorizontalIndex()]);

@@ -2,10 +2,10 @@ package com.mrcrayfish.furniture.rift.init;
 
 import com.mrcrayfish.furniture.rift.Constants;
 import com.mrcrayfish.furniture.rift.block.*;
+import com.mrcrayfish.furniture.rift.mixin.BlockInvoker;
+import com.mrcrayfish.furniture.rift.mixin.ItemInvoker;
 import net.minecraft.block.Block;
-import net.minecraft.block.material.Material;
 import net.minecraft.item.EnumDyeColor;
-import net.minecraft.item.Item;
 import net.minecraft.item.ItemGroup;
 import net.minecraft.util.ResourceLocation;
 import org.dimdev.rift.listener.BlockAdder;
@@ -103,49 +103,49 @@ public class ModBlocks implements BlockAdder, ItemAdder
     @Override
     public void registerItems()
     {
-        Item.register(MODERN_TV, ItemGroup.DECORATIONS);
-        Item.register(MODERN_TABLE, ItemGroup.DECORATIONS);
-        Item.register(MODERN_CHAIR, ItemGroup.DECORATIONS);
-        Item.register(WHITE_MODERN_COUCH, ItemGroup.DECORATIONS);
-        Item.register(ORANGE_MODERN_COUCH, ItemGroup.DECORATIONS);
-        Item.register(MAGENTA_MODERN_COUCH, ItemGroup.DECORATIONS);
-        Item.register(LIGHT_BLUE_MODERN_COUCH, ItemGroup.DECORATIONS);
-        Item.register(YELLOW_MODERN_COUCH, ItemGroup.DECORATIONS);
-        Item.register(LIME_MODERN_COUCH, ItemGroup.DECORATIONS);
-        Item.register(PINK_MODERN_COUCH, ItemGroup.DECORATIONS);
-        Item.register(GRAY_MODERN_COUCH, ItemGroup.DECORATIONS);
-        Item.register(LIGHT_GRAY_MODERN_COUCH, ItemGroup.DECORATIONS);
-        Item.register(CYAN_MODERN_COUCH, ItemGroup.DECORATIONS);
-        Item.register(PURPLE_MODERN_COUCH, ItemGroup.DECORATIONS);
-        Item.register(BLUE_MODERN_COUCH, ItemGroup.DECORATIONS);
-        Item.register(BROWN_MODERN_COUCH, ItemGroup.DECORATIONS);
-        Item.register(GREEN_MODERN_COUCH, ItemGroup.DECORATIONS);
-        Item.register(RED_MODERN_COUCH, ItemGroup.DECORATIONS);
-        Item.register(BLACK_MODERN_COUCH, ItemGroup.DECORATIONS);
-        Item.register(DESK_OAK, ItemGroup.DECORATIONS);
-        Item.register(DESK_SPRUCE, ItemGroup.DECORATIONS);
-        Item.register(DESK_BIRCH, ItemGroup.DECORATIONS);
-        Item.register(DESK_JUNGLE, ItemGroup.DECORATIONS);
-        Item.register(DESK_ACACIA, ItemGroup.DECORATIONS);
-        Item.register(DESK_DARK_OAK, ItemGroup.DECORATIONS);
-        Item.register(DESK_STONE, ItemGroup.DECORATIONS);
-        Item.register(DESK_GRANITE, ItemGroup.DECORATIONS);
-        Item.register(DESK_DIORITE, ItemGroup.DECORATIONS);
-        Item.register(DESK_ANDESITE, ItemGroup.DECORATIONS);
-        /*Item.register(DESK_CABINET_OAK, ItemGroup.DECORATIONS);
-        Item.register(DESK_CABINET_SPRUCE, ItemGroup.DECORATIONS);
-        Item.register(DESK_CABINET_BIRCH, ItemGroup.DECORATIONS);
-        Item.register(DESK_CABINET_JUNGLE, ItemGroup.DECORATIONS);
-        Item.register(DESK_CABINET_ACACIA, ItemGroup.DECORATIONS);
-        Item.register(DESK_CABINET_DARK_OAK, ItemGroup.DECORATIONS);
-        Item.register(DESK_CABINET_STONE, ItemGroup.DECORATIONS);
-        Item.register(DESK_CABINET_GRANITE, ItemGroup.DECORATIONS);
-        Item.register(DESK_CABINET_DIORITE, ItemGroup.DECORATIONS);
-        Item.register(DESK_CABINET_ANDESITE, ItemGroup.DECORATIONS);*/
+        ItemInvoker.register(MODERN_TV, ItemGroup.DECORATIONS);
+        ItemInvoker.register(MODERN_TABLE, ItemGroup.DECORATIONS);
+        ItemInvoker.register(MODERN_CHAIR, ItemGroup.DECORATIONS);
+        ItemInvoker.register(WHITE_MODERN_COUCH, ItemGroup.DECORATIONS);
+        ItemInvoker.register(ORANGE_MODERN_COUCH, ItemGroup.DECORATIONS);
+        ItemInvoker.register(MAGENTA_MODERN_COUCH, ItemGroup.DECORATIONS);
+        ItemInvoker.register(LIGHT_BLUE_MODERN_COUCH, ItemGroup.DECORATIONS);
+        ItemInvoker.register(YELLOW_MODERN_COUCH, ItemGroup.DECORATIONS);
+        ItemInvoker.register(LIME_MODERN_COUCH, ItemGroup.DECORATIONS);
+        ItemInvoker.register(PINK_MODERN_COUCH, ItemGroup.DECORATIONS);
+        ItemInvoker.register(GRAY_MODERN_COUCH, ItemGroup.DECORATIONS);
+        ItemInvoker.register(LIGHT_GRAY_MODERN_COUCH, ItemGroup.DECORATIONS);
+        ItemInvoker.register(CYAN_MODERN_COUCH, ItemGroup.DECORATIONS);
+        ItemInvoker.register(PURPLE_MODERN_COUCH, ItemGroup.DECORATIONS);
+        ItemInvoker.register(BLUE_MODERN_COUCH, ItemGroup.DECORATIONS);
+        ItemInvoker.register(BROWN_MODERN_COUCH, ItemGroup.DECORATIONS);
+        ItemInvoker.register(GREEN_MODERN_COUCH, ItemGroup.DECORATIONS);
+        ItemInvoker.register(RED_MODERN_COUCH, ItemGroup.DECORATIONS);
+        ItemInvoker.register(BLACK_MODERN_COUCH, ItemGroup.DECORATIONS);
+        ItemInvoker.register(DESK_OAK, ItemGroup.DECORATIONS);
+        ItemInvoker.register(DESK_SPRUCE, ItemGroup.DECORATIONS);
+        ItemInvoker.register(DESK_BIRCH, ItemGroup.DECORATIONS);
+        ItemInvoker.register(DESK_JUNGLE, ItemGroup.DECORATIONS);
+        ItemInvoker.register(DESK_ACACIA, ItemGroup.DECORATIONS);
+        ItemInvoker.register(DESK_DARK_OAK, ItemGroup.DECORATIONS);
+        ItemInvoker.register(DESK_STONE, ItemGroup.DECORATIONS);
+        ItemInvoker.register(DESK_GRANITE, ItemGroup.DECORATIONS);
+        ItemInvoker.register(DESK_DIORITE, ItemGroup.DECORATIONS);
+        ItemInvoker.register(DESK_ANDESITE, ItemGroup.DECORATIONS);
+        /*ItemAccessor.register(DESK_CABINET_OAK, ItemGroup.DECORATIONS);
+        ItemAccessor.register(DESK_CABINET_SPRUCE, ItemGroup.DECORATIONS);
+        ItemAccessor.register(DESK_CABINET_BIRCH, ItemGroup.DECORATIONS);
+        ItemAccessor.register(DESK_CABINET_JUNGLE, ItemGroup.DECORATIONS);
+        ItemAccessor.register(DESK_CABINET_ACACIA, ItemGroup.DECORATIONS);
+        ItemAccessor.register(DESK_CABINET_DARK_OAK, ItemGroup.DECORATIONS);
+        ItemAccessor.register(DESK_CABINET_STONE, ItemGroup.DECORATIONS);
+        ItemAccessor.register(DESK_CABINET_GRANITE, ItemGroup.DECORATIONS);
+        ItemAccessor.register(DESK_CABINET_DIORITE, ItemGroup.DECORATIONS);
+        ItemAccessor.register(DESK_CABINET_ANDESITE, ItemGroup.DECORATIONS);*/
     }
 
     private void registerBlock(String id, Block block)
     {
-        Block.register(new ResourceLocation(Constants.MOD_ID, id), block);
+        BlockInvoker.register(new ResourceLocation(Constants.MOD_ID, id), block);
     }
 }

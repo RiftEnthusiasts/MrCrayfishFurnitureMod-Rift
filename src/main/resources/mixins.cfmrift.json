@@ -8,7 +8,9 @@
     "mixins": [
         "MixinEntityTracker",
         "MixinEntityTrackerEntry",
-        "MixinNetHandlerPlayClient"
+        "MixinNetHandlerPlayClient",
+        "ItemInvoker",
+        "BlockInvoker"
     ],
     "client": [
     ]
